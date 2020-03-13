@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Edit Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.00138728324 0.0230635838 15.9854509 0.0230635838 15.9854509 15.9292486 0.00138728324 15.9292486"></polygon>
+    </defs>
+    <g id="Desktop-App" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Route-Plan-A-1.0" transform="translate(-1269.000000, -559.000000)">
+            <g id="Main-Content" transform="translate(281.000000, 120.000000)">
+                <g id="Table">
+                    <g id="Row-7" transform="translate(0.000000, 420.000000)">
+                        <g id="Edit-Icon" transform="translate(988.000000, 19.000000)">
+                            <g>
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <g id="Clip-2"></g>
+                                <path d="M9.94011561,2.67782659 L13.1919306,5.92964162 L4.96071676,14.1608555 L1.71079769,10.9090405 L9.94011561,2.67782659 Z M15.6594913,1.89352601 L14.2092717,0.443375723 C13.6488324,-0.117040462 12.7387977,-0.117040462 12.1764855,0.443375723 L10.7873064,1.83255491 L14.0390983,5.08427746 L15.6594913,3.46395376 C16.094104,3.02927168 16.094104,2.32820809 15.6594913,1.89352601 Z M0.00904046243,15.4796763 C-0.0501271676,15.7460347 0.190289017,15.9846474 0.456647399,15.9198844 L4.08030058,15.0412717 L0.830289017,11.7894798 L0.00904046243,15.4796763 Z" id="Fill-1" fill="#707070" mask="url(#mask-2)"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
