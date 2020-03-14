@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{FuD7:function(n,o,i){"use strict";i.d(o,"a",function(){return e});var e=[{title:"\u062f\u0627\u0634\u0628\u0648\u0631\u062f",icon:"home-outline",link:"/pages/iot-dashboard",home:!0},{title:"\u0645\u062f\u06cc\u0631\u06cc\u062a \u0634\u0631\u06a9\u062a \u0647\u0627",link:"/pages/company"}]}}]);
