@@ -15,9 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var api_1 = require("../base/api");
 var company_1 = require("../models/company");
-var finnotechToken_1 = require("../models/finnotechToken");
 var base_1 = require("./base");
-var config_1 = require("../base/config");
 var CompanyCtrl = /** @class */ (function (_super) {
     __extends(CompanyCtrl, _super);
     function CompanyCtrl() {
@@ -28,28 +26,29 @@ var CompanyCtrl = /** @class */ (function (_super) {
             limit: 10
         };
         _this.addCompanyToDb = function (req, res) {
-            finnotechToken_1.default.findOne().sort({ created_at: -1 }).exec(function (err, finno) {
-                if (finno) {
-                    console.log(finno);
-                    api_1.Api.getApi("/bourse/v2/clients/" + config_1.Config.CLIENT_ID + "/companies", { Authorization: "Bearer " + finno.token }).then(function (result) {
-                        for (var _i = 0, _a = result.data.result; _i < _a.length; _i++) {
-                            var item = _a[_i];
-                            var obj = new company_1.default(item);
-                            obj.save(function (err, user) {
-                            });
-                        }
+            // FinnotechToken.findOne().sort({created_at: -1}).exec(function(err, finno) {
+            //   if(finno){
+            //     console.log(finno)
+            console.log(123);
+            api_1.Api.getApi("/companies", { Cookie: "authentication=gAAAAABeiJal5Avfr51Pw6FVGlLULLiXwvpngano064tFQ9xT519knXPw8OTx4UnHvberJLyWRyTjW503DWWF8oJFCC2uqI3o1bKMAVBU2sOYxwX4b6j0RiLJVitvXuCnblB4VinHVpA0LqBvWpp-k-sYjIddY3IdIETCrSWZrHJ7TcJ4RjXdtb-SJUvNtc4P_mRXWB84-KdL6YqOX77eEhen45TmcLyJskySgqJeDhPp4cP8MjahxoxS_9TICnpxAlYUALs6G1RElND6bOzGveWUUjOHqA017C_McPg_1pCtuYE7Zffe7kuoIxFJgYlRWd6r8OQTKb6evNv9TWHD3kZdOLHnd1HJQ==" }).then(function (result) {
+                for (var _i = 0, _a = result.data.companies; _i < _a.length; _i++) {
+                    var item = _a[_i];
+                    var obj = new company_1.default(item);
+                    obj.save(function (err, user) {
                     });
                 }
             });
+            // }
+            // });
         };
         _this.getAllPagination = function (req, res) {
             var query = {};
             query['deleted'] = false;
             if (req.query.filter) {
                 query["$or"] = [];
-                query["$or"].push({ "CoName": new RegExp(req.query.filter) });
-                query["$or"].push({ "CoTSESymbol": new RegExp(req.query.filter) });
-                query["$or"].push({ "CoNameEnglish": new RegExp(req.query.filter) });
+                query["$or"].push({ "nameFA": new RegExp(req.query.filter) });
+                query["$or"].push({ "symbolFA": new RegExp(req.query.filter) });
+                query["$or"].push({ "name": new RegExp(req.query.filter) });
             }
             _this.options.page = parseInt(req.query.page) + 1;
             _this.model.paginate(query, _this.options, function (err, docs) {

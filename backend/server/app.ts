@@ -51,7 +51,7 @@ app.use(expressWinston.logger({
 }));
 
 let mongodbURI;
-  mongodbURI = 'mongodb://localhost:27017/simplywall';
+  mongodbURI = 'mongodb://milad:74626731@localhost:27017/simplywall?authSource=admin';
   app.use(morgan('dev'));
 
 mongoose.Promise = global.Promise;

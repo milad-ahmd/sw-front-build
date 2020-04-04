@@ -44,7 +44,7 @@ app.use(expressWinston.logger({
     ignoreRoute: function (req, res) { return false; } // optional: allows to skip some log messages based on request and/or response
 }));
 var mongodbURI;
-mongodbURI = 'mongodb://localhost:27017/simplywall';
+mongodbURI = 'mongodb://milad:74626731@localhost:27017/simplywall?authSource=admin';
 app.use(morgan('dev'));
 mongoose.Promise = global.Promise;
 var mongodb = mongoose.connect(mongodbURI);
