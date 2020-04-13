@@ -1,34 +1,29 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var api_1 = require("../base/api");
-var config_1 = require("../base/config");
-var finnotechToken_1 = require("../models/finnotechToken");
+var token_1 = require("../models/token");
+var FormData = require('form-data');
 var FinnoAuth = /** @class */ (function () {
     function FinnoAuth() {
     }
     FinnoAuth.getToken = function (body, res) {
         return new Promise((function (resolve) {
-            var model = finnotechToken_1.default;
-            var data = {
-                "grant_type": body.grant_type,
-                "nid": body.nid,
-                "scopes": body.scopes.join(',')
-            };
+            var model = token_1.default;
             var headers = {
                 'Content-Type': 'application/json',
-                'Authorization': 'Basic ' + config_1.Config.BASE64_TOKEN
             };
-            api_1.Api.postApi('/dev/v2/oauth2/token', data, headers).then(function (result) {
+            var data = {
+                "username": 'gharehbaghi',
+                "password": 'gharehbaghi'
+            };
+            api_1.Api.postApi('/login', data, headers).then(function (result) {
+                console.log(result);
                 var token = {};
                 if (result.data.status === 'DONE' && result.data.result) {
-                    token['token'] = result.data.result.value;
-                    token['scopes'] = result.data.result.scopes;
-                    token['lifeTime'] = result.data.result.lifeTime;
-                    token['creationDate'] = result.data.result.creationDate;
-                    token['refreshToken'] = result.data.result.refreshToken;
+                    token['token'] = result.data.token;
+                    token['expiration'] = result.data.expiration;
                     var obj = new model(token);
                     obj.save(function (err, item) {
-                        // 11000 is the code for duplicate key error
                         if (err && err.code === 11000) {
                             resolve({ isSuccessful: false, errorStatus: 400 });
                         }

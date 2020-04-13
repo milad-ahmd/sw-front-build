@@ -1,17 +1,16 @@
 import axios from 'axios'
 import { Config } from './config'
 
-
 export class Api {
-
   public static async getApi(url, headers, params?) {
     try {
-      return await axios({
+      let response= await axios({
         method: 'get',
-        url: Config.FINNOTECH_BASE_API_URL + url,
+        url: Config.BASE_API_URL + url,
         headers,
         params
       })
+      return response.data
     } catch (error) {
       console.error(error)
     }
@@ -21,7 +20,7 @@ export class Api {
     try {
       return await axios({
         method: 'post',
-        url: Config.FINNOTECH_BASE_API_URL + url,
+        url: Config.BASE_API_URL+url,
         headers,
         data,
         params

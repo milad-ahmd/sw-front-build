@@ -36,6 +36,7 @@
     "express-fileupload": "^1.1.5",
     "express-session": "^1.15.6",
     "express-winston": "^3.3.0",
+    "form-data": "^3.0.0",
     "jsonwebtoken": "^8.1.1",
     "keystone": "^4.2.1",
     "moment": "2.18.1",

@@ -49,7 +49,7 @@ var Api = /** @class */ (function () {
                         _a.trys.push([0, 2, , 3]);
                         return [4 /*yield*/, axios_1.default({
                                 method: 'get',
-                                url: config_1.Config.FINNOTECH_BASE_API_URL + url,
+                                url: config_1.Config.BASE_API_URL + url,
                                 headers: headers,
                                 params: params
                             })];
@@ -72,7 +72,7 @@ var Api = /** @class */ (function () {
                         _a.trys.push([0, 2, , 3]);
                         return [4 /*yield*/, axios_1.default({
                                 method: 'post',
-                                url: config_1.Config.FINNOTECH_BASE_API_URL + url,
+                                url: config_1.Config.BASE_API_URL + url,
                                 headers: headers,
                                 data: data,
                                 params: params

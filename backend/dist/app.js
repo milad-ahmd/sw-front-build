@@ -38,13 +38,18 @@ app.use(expressWinston.logger({
         new (winston.transports.File)({ filename: './logs/server' + ((process.env.pm_id) ? process.env.pm_id : '') + '.log' })
     ],
     meta: true,
-    msg: function (req, res) { return "sess:" + ((req.session) ? req.session.id : "logged out") + " > " + req.method + " " + req.url + " - body: " + JSON.stringify(req.body); },
+    msg: function (req, res) {
+        return "sess:" + ((req.session) ? req.session.id : "logged out") + " > " + req.method + " " + req.url + " - body: " + JSON.stringify(req.body);
+    },
     expressFormat: false,
     colorize: true,
-    ignoreRoute: function (req, res) { return false; } // optional: allows to skip some log messages based on request and/or response
+    ignoreRoute: function (req, res) {
+        return false;
+    } // optional: allows to skip some log messages based on request and/or response
 }));
 var mongodbURI;
-mongodbURI = 'mongodb://milad:74626731@localhost:27017/simplywall?authSource=admin';
+// mongodbURI = 'mongodb://milad:74626731@localhost:27017/simplywall?authSource=admin';
+mongodbURI = 'mongodb://localhost:27017/simplywall';
 app.use(morgan('dev'));
 mongoose.Promise = global.Promise;
 var mongodb = mongoose.connect(mongodbURI);
@@ -52,9 +57,6 @@ mongodb
     .then(function (db) {
     console.log('Connected to MongoDB');
     routes_1.default(app);
-    app.get('/*', function (req, res) {
-        res.sendFile(path.join(__dirname, '../public/index.html'));
-    });
     app.listen(app.get('port'), function () {
         console.log('Your Backend listening on port ' + app.get('port'));
     });
