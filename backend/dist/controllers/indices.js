@@ -18,13 +18,11 @@ var base_1 = require("./base");
 var finnoAuth_1 = require("./finnoAuth");
 var api_1 = require("../base/api");
 var token_1 = require("../models/token");
-var stocksFinancialStats_1 = require("../models/stocksFinancialStats");
-var StocksCtrl = /** @class */ (function (_super) {
-    __extends(StocksCtrl, _super);
-    function StocksCtrl() {
+var IndicesCtrl = /** @class */ (function (_super) {
+    __extends(IndicesCtrl, _super);
+    function IndicesCtrl() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.model = user_1.default;
-        _this.stocksFinancialStats = stocksFinancialStats_1.default;
         _this.getToken = function (req, res) {
             finnoAuth_1.default.getToken(req.body, res).then(function (token) {
                 return res.status(200).json(token);
@@ -61,7 +59,7 @@ var StocksCtrl = /** @class */ (function (_super) {
         };
         return _this;
     }
-    return StocksCtrl;
+    return IndicesCtrl;
 }(base_1.default));
-exports.default = StocksCtrl;
-//# sourceMappingURL=stocks.js.map
+exports.default = IndicesCtrl;
+//# sourceMappingURL=indices.js.map

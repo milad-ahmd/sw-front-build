@@ -17,7 +17,7 @@ const winston = require('winston');
 import setRoutes from './routes';
 
 const app = express();
-app.set('port', (process.env.PORT || 3030));
+app.set('port', (3030));
 var cookieSecret = 'secretCookie';
 
 app.use(cookieParser(cookieSecret));
@@ -57,8 +57,8 @@ app.use(expressWinston.logger({
 }));
 
 let mongodbURI;
-// mongodbURI = 'mongodb://milad:74626731@localhost:27017/simplywall?authSource=admin';
-mongodbURI = 'mongodb://localhost:27017/simplywall';
+mongodbURI = 'mongodb://milad:74626731@localhost:27017/simplywall?authSource=admin';
+// mongodbURI = 'mongodb://localhost:27017/simplywall';
 app.use(morgan('dev'));
 
 mongoose.Promise = global.Promise;

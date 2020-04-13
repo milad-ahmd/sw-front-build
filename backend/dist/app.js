@@ -15,7 +15,7 @@ var winston = require('winston');
 var routes_1 = require("./routes");
 var app = express();
 exports.app = app;
-app.set('port', (process.env.PORT || 3030));
+app.set('port', (3030));
 var cookieSecret = 'secretCookie';
 app.use(cookieParser(cookieSecret));
 app.use('/', express.static(path.join(__dirname, '../public')));
@@ -48,8 +48,8 @@ app.use(expressWinston.logger({
     } // optional: allows to skip some log messages based on request and/or response
 }));
 var mongodbURI;
-// mongodbURI = 'mongodb://milad:74626731@localhost:27017/simplywall?authSource=admin';
-mongodbURI = 'mongodb://localhost:27017/simplywall';
+mongodbURI = 'mongodb://milad:74626731@localhost:27017/simplywall?authSource=admin';
+// mongodbURI = 'mongodb://localhost:27017/simplywall';
 app.use(morgan('dev'));
 mongoose.Promise = global.Promise;
 var mongodb = mongoose.connect(mongodbURI);

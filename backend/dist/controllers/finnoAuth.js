@@ -19,7 +19,7 @@ var FinnoAuth = /** @class */ (function () {
             api_1.Api.postApi('/login', data, headers).then(function (result) {
                 console.log(result);
                 var token = {};
-                if (result.data.status === 'DONE' && result.data.result) {
+                if (result.data && result.data.token) {
                     token['token'] = result.data.token;
                     token['expiration'] = result.data.expiration;
                     var obj = new model(token);
