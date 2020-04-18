@@ -1,1 +1,0 @@
-{"version":3,"file":"indices.js","sourceRoot":"","sources":["../../server/api/indices.ts"],"names":[],"mappings":";;AAAA,iCAAkC;AAClC,kDAAiD;AAEjD,IAAM,MAAM,GAAG,OAAO,CAAC,MAAM,EAAE,CAAC;AAChC,IAAM,WAAW,GAAG,IAAI,iBAAW,EAAE,CAAC;AAEtC,MAAM,CAAC,KAAK,CAAC,iBAAiB,CAAC,CAAC,GAAG,CAAC,WAAW,CAAC,iBAAiB,CAAC,CAAC;AAEnE,kBAAe,MAAM,CAAC"}

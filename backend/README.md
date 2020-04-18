@@ -1,2 +1,0 @@
-# Simplywll-backend
-
